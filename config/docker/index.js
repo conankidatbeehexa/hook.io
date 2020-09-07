@@ -1,14 +1,14 @@
 const app = {
   name: "hook.io",
   // host: "https://hook.io",
-  url: "http://localhost:9999",
-  ws: "ws://localhost:9999",
+  url: "https://hookio.beehexa.com",
+  ws: "wss://hookio.beehexa.com",
   //url: "https://hook.io",
   domain: "localhost",
   port: "9999",
-  logo: "http://localhost:9999/img/logo.png",
-  logoInverse: "http://localhost:9999/img/logo-inverse.png",
-  adminEmail: "hookmaster@hook.io"
+  logo: "https://hookio.beehexa.com/img/logo.png",
+  logoInverse: "https://hookio.beehexa.com/img/logo-inverse.png",
+  adminEmail: "hookio@beehexa.com"
 };
 
 const redis = {
@@ -119,7 +119,7 @@ module['exports'] = {
   web: web,
   balancer: balancer,
   broadcast: broadcast,
-  baseUrl: "http://localhost:9999",
+  baseUrl: "https://hookio.beehexa.com",
   couch: {
     "database": "hook",
     "type": "couch2",
@@ -146,10 +146,10 @@ module['exports'] = {
     // don't use these in production as they may be revoked and refeshed at anytime
     CLIENT_ID: "321de11108ccdacf2279",
     CLIENT_SECRET: "14ed41431983aaceef121d32f2f3f3087e0434ac",
-    OAUTH_CALLBACK: "http://localhost:9999/login/github/callback"
+    OAUTH_CALLBACK: "https://hookio.beehexa.com/login/github/callback"
   },
-  defaultTheme : "http://localhost:9999/themes/none/index.html", // should be https?
-  defaultPresenter : "http://localhost:9999/themes/none/index.js",
+  defaultTheme : "https://hookio.beehexa.com/themes/none/index.html", // should be https?
+  defaultPresenter : "https://hookio.beehexa.com/themes/none/index.js",
   stripe: {
     secretKey: "",
     publicKey: ""

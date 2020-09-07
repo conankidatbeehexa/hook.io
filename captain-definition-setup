@@ -14,6 +14,6 @@
         "COPY ./bin /var/chroot/bin",
         "RUN mkdir -p /etc/letsencrypt/live/hook.io",
         "COPY ./ssl/*.pem /etc/letsencrypt/live/hook.io/",
-        "CMD [ \"/src/bin/docker/wait\", \"srv-captain--hookio-redis srv-captain--hookio-couchdb srv-captain--hookio-worker0 srv-captain--hookio-balancer\", \"-c\", \"node\", \"/src/bin/services/web\"]"
+        "CMD [ \"/src/bin/docker/wait\", \"srv-captain--hookio-couchdb\", \"-c\", \"/src/bin/docker/initialize\"]"
     ]
 }

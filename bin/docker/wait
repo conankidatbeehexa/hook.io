@@ -4,8 +4,8 @@ declare -A PORT
 PORT[srv-captain--hookio-redis]=6379
 PORT[srv-captain--hookio-couchdb]=5984
 PORT[srv-captain--hookio-balancer]=9999
-PORT[worker0]=10000
-PORT[web]=11000
+PORT[srv-captain--hookio-worker0]=10000
+PORT[srv-captain--hookio-app]=11000
 
 wait_for() {
   local host=$1
