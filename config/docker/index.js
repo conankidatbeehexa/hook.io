@@ -14,14 +14,14 @@ const app = {
 const redis = {
   port: 6379,
   password: "password",
-  host: "redis"
+  host: "srv-captain--hookio-redis"
 };
 
 const couch = {
   "username": "admin",
   "password": "password",
   "port": 5984,
-  "host": "couch"
+  "host": "srv-captain--hookio-couchdb"
 };
 
 const cluster = {
@@ -37,7 +37,7 @@ const cluster = {
 
 const balancer = {
   port: 9999,
-  host: "app",
+  host: "srv-captain--hookio-app",
   https: false,
   publicIP: "127.0.0.1",
   roots: ["hookio", "0.0.0.0", "localhost", "hook.io", "www.hook.io", "couch"],
@@ -67,7 +67,7 @@ const broadcast = {
 
 const web = {
   port: 11000,
-  host: "app",
+  host: "srv-captain--hookio-app",
   https: false,
   registerWithLoadBalancer: cluster.registerWithLoadBalancer,
   roots: ["hookio", "0.0.0.0", "localhost", "hook.io", "www.hook.io"],

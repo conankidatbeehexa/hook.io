@@ -1,9 +1,9 @@
 #!/bin/bash
 
 declare -A PORT
-PORT[redis]=6379
-PORT[couch]=5984
-PORT[balancer]=9999
+PORT[srv-captain--hookio-redis]=6379
+PORT[srv-captain--hookio-couchdb]=5984
+PORT[srv-captain--hookio-balancer]=9999
 PORT[worker0]=10000
 PORT[web]=11000
 

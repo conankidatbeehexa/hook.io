@@ -1,0 +1,7 @@
+{
+    "schemaVersion": 2,
+    "dockerfileLines": [
+        "FROM klaemo/couchdb:2.0.0",
+        "COPY local.ini /usr/local/etc/couchdb/"
+    ]
+}
