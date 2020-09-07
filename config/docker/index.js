@@ -37,7 +37,7 @@ const cluster = {
 
 const balancer = {
   port: 9999,
-  host: "srv-captain--hookio-app",
+  host: "srv-captain--hookio-balancer",
   https: false,
   publicIP: "127.0.0.1",
   roots: ["hookio", "0.0.0.0", "localhost", "hook.io", "www.hook.io", "couch"],
