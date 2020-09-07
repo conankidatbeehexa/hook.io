@@ -1,0 +1,19 @@
+{
+    "schemaVersion": 2,
+    "dockerfileLines": [
+        "FROM node:10",
+        "RUN apt-get -y update && apt-get -y upgrade",
+        "RUN apt-get -y install build-essential binutils debootstrap netcat",
+        "RUN cd /tmp; git clone https://github.com/tj/mon; cd mon; make install",
+        "ADD . /src",
+        "WORKDIR /src",
+        "RUN export USER=root && cd /src && rm -rf ./node_modules/ && npm install && npm link",
+        "RUN addgroup workers",
+        "RUN adduser --gid 1000 --disabled-password --gecos '' worker",
+        "RUN mkdir -p /var/chroot/bin",
+        "COPY ./bin /var/chroot/bin",
+        "RUN mkdir -p /etc/letsencrypt/live/hook.io",
+        "COPY ./ssl/*.pem /etc/letsencrypt/live/hook.io/",
+        "CMD [ \"/src/bin/docker/wait\", \"redis\", \"-c\", \"node\", \"/src/bin/services/load-balancer\"]"
+    ]
+}
